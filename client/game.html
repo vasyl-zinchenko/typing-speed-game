@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/common.css" />
+        <link rel="stylesheet" href="/styles/game.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Typing Race - Game</title>
+    </head>
+
+    <body>
+        <div id="root">
+            <div class="modal-wrapper"></div>
+
+            <div id="game-page" class="full-screen" style="display: none">
+                <div class="game-layout">
+                    <aside class="players-sidebar">
+                        <div class="sidebar-header">
+                            <h2 id="room-name">Room Name</h2>
+                            <button id="quit-room-btn">← Back</button>
+                        </div>
+                        <div class="players-list">
+                            <h3 class="players-title">👥 Players</h3>
+                            <div id="users-wrapper"></div>
+                        </div>
+                    </aside>
+
+                    <main class="game-main">
+                        <div id="game-container">
+                            <button id="ready-btn">🎮 READY</button>
+                            <div id="timer" class="display-none">5</div>
+                            <div id="text-container" class="display-none"></div>
+                            <div id="game-timer" class="display-none"></div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/game.ts"></script>
+    </body>
+</html>

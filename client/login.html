@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/common.css" />
+        <link rel="stylesheet" href="/styles/login.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Login - Type Quest</title>
+    </head>
+
+    <body>
+        <div id="root">
+            <main id="login-page" class="full-screen flex-centered">
+                <form class="login-form">
+                    <div class="avatar-container">
+                        <img src="/images/avatar.png" alt="Type Quest Logo" class="avatar-image" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="username-input" class="input-label">
+                            Username
+                            <span class="info-icon" title="Enter your username to start the game">ℹ</span>
+                        </label>
+                        <input
+                            id="username-input"
+                            class="username-input"
+                            autofocus
+                            placeholder="type Username"
+                            type="text"
+                            required
+                            minlength="2"
+                            maxlength="20"
+                        />
+                    </div>
+
+                    <button id="submit-button" type="submit" class="sign-in-button">Sign-In</button>
+                </form>
+            </main>
+
+            <div id="warning-modal" class="modal-overlay hidden">
+                <div class="modal-content">
+                    <div class="modal-icon">⚠️</div>
+                    <h2 class="modal-title">Warning</h2>
+                    <p id="modal-message" class="modal-message"></p>
+                    <button id="modal-close-btn" class="modal-button">OK</button>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/login.ts"></script>
+    </body>
+</html>
