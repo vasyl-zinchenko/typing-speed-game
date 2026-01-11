@@ -175,7 +175,7 @@ function gameOver(users: GameUser[]): void {
 }
 
 gameSocket.on('JOIN_ROOM_DONE', ({ usersInRoom }: JoinRoomDonePayload) => {
-    appendUserElement({ username: username || '', ready: false, isCurrentUser: true });
+    updateUsersInRoom(usersInRoom);
 });
 
 gameSocket.on('UPDATE_USERS_IN_ROOM', updateUsersInRoom);
