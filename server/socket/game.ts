@@ -74,6 +74,13 @@ export default (io: Namespace): void => {
                 return;
             }
 
+            const existingUser = foundRoom.users.find(u => u.userId === socket.id || u.username === username);
+            if (existingUser) {
+                socket.emit('GET_ROOM_ID', foundRoom.roomId);
+                io.to(socket.id).emit('JOIN_ROOM_DONE', { roomId, usersInRoom: foundRoom.users });
+                return;
+            }
+
             socket.emit('GET_ROOM_ID', foundRoom.roomId);
             io.emit('UPDATE_ROOMS', getRoomsArray());
 
